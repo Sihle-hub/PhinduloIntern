@@ -1,0 +1,173 @@
+/* Basic Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #eef2f3; /* Soft background color */
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700; /* Bolder font weight */
+    color: #2c3e50; /* Darker text color */
+    margin-bottom: 20px;
+}
+
+/* Filter Header */
+.filter-header {
+    display: flex;
+    justify-content: flex-end; /* Align filters to the right */
+    margin-bottom: 30px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.filter-container label {
+    font-weight: 600;
+    color: #34495e; /* Darker label color */
+}
+
+.filter-container select,
+.filter-container input,
+.filter-container button {
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #bdc3c7; /* Lighter border color */
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.filter-container select:hover,
+.filter-container input:hover,
+.filter-container button:hover {
+    border-color: #2980b9; /* Highlighted border color on hover */
+}
+
+#clearFilters {
+    background-color: #e74c3c; /* Red color for clear button */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease;
+}
+
+#clearFilters:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
+/* Product Grid */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.6s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #2980b9; /* Consistent color for product titles */
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #27ae60; /* Green price color */
+    margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    .filter-container label,
+    .filter-container select,
+    .filter-container input,
+    .filter-container button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .product-card {
+        width: 180px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-container {
+        padding: 15px;
+    }
+
+    .filter-container select,
+    .filter-container input,
+    .filter-container button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .product-card {
+        width: 160px;
+    }
+}
